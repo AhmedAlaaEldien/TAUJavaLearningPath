@@ -33,7 +33,7 @@ public class SalaryCalculation {
 
     public static double salaryCalculator( double sales, double salary, double bonus, double target, boolean isCommitted){
 
-        if(sales == target){
+        if(sales == target && target !=0){
             System.out.println("Congrats! You've met your target, You will get 100% of the bonus");
             salary = salary + bonus;
 
