@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class EnsureFromYearGrade {
 
-    public static void main(String args[]){
+    public static void main(String[] args){
 
         System.out.println("Enter your letter grade:");
         Scanner scanner = new Scanner(System.in);
@@ -13,8 +13,18 @@ public class EnsureFromYearGrade {
     }
 
     public static String yearGrade(String StudentGrade){
-        String message;
 
+        return switch (StudentGrade) {
+            case "A" -> "Excellent Grade!";
+            case "B" -> "Very Good Great!";
+            case "C" -> "Good job!";
+            case "D" -> "You need to work a bit harder";
+            case "F" -> "Uh oh!";
+            default -> "Error. Invalid grade";
+        };
+
+        /*
+        String message;
         switch(StudentGrade){
             case "A":
                 message = "Excellent Grade!";
@@ -37,5 +47,7 @@ public class EnsureFromYearGrade {
         }
 
         return message;
+        };
+        * */
     }
 }
