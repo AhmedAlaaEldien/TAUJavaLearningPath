@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class StudentsExamsDegrees {
@@ -5,24 +6,29 @@ public class StudentsExamsDegrees {
     public static void main(String[] args) {
         scanner = new Scanner(System.in);
         System.out.println("Please, Enter Number Of Students");
-        int numberOfStudents = scanner.nextInt();
+        double numberOfStudents = scanner.nextDouble();
         System.out.println("Please, Enter Number Of Exams");
-        int numberOfExams = scanner.nextInt();
+        double numberOfExams = scanner.nextDouble();
 
         StudentsExamsDegrees.StudentDegree(numberOfStudents, numberOfExams);
     }
 
-    public static void StudentDegree(int numOfStudents, int noOfExams){
+    public static void StudentDegree(double numOfStudents, double noOfExams){
 
-        for(int i=0; i<numOfStudents; i++){
-            double totalDegrees=0;
-            for(int j=0; j<noOfExams; j++){
-                System.out.println("Please, Enter Exam Degree for Student NO. " + (i+1) + "  On Exam NO. " + (j+1));
-                double Degree = scanner.nextDouble();
-                totalDegrees=totalDegrees+Degree;
-            }
-            System.out.println("Total Degrees For Student NO. " + (i+1) + " = "+ totalDegrees);
+        if(numOfStudents <= 0 || noOfExams <= 0 ){
+            System.out.println("Number of Student and Exams Can't be with value 0 or less");
         }
-        scanner.close();
+        else {
+            for (int i = 0; i < numOfStudents; i++) {
+                double totalDegrees = 0;
+                for (int j = 0; j < noOfExams; j++) {
+                    System.out.println("Please, Enter Exam Degree for Student NO. " + (i + 1) + "  On Exam NO. " + (j + 1));
+                    double Degree = scanner.nextDouble();
+                    totalDegrees = totalDegrees + Degree;
+                }
+                System.out.println("Total Degrees For Student NO. " + (i + 1) + " = " + totalDegrees);
+            }
+            scanner.close();
+        }
     }
 }
